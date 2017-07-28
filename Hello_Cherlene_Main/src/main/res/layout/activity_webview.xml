@@ -19,12 +19,14 @@
     <Button
         android:id="@+id/js_call_android_id"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_below="@id/load_js_btn_id"
+        android:text="js call android"/>
 
     <RelativeLayout
         android:id="@+id/webview_layout_id"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/load_js_btn_id"/>
+        android:layout_below="@id/js_call_android_id"/>
 
 </RelativeLayout>

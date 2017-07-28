@@ -26,6 +26,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.zhangqingling.helloworld.R;
+import com.example.zhangqingling.helloworld.js.AndroidtoJs;
 
 public class WebViewActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -33,6 +34,7 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
     private RelativeLayout mWebViewLayout;
     private WebView mWebView;
     private Button mLoadJSBtn;
+    private Button mJsCallAndroidBtn;
 
     private WebSettings mWebSettings;
     private WebViewClient mWebViewClient;
@@ -49,6 +51,8 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
         mTitleView = (TextView)findViewById(R.id.title_id);
         mLoadJSBtn = (Button)findViewById(R.id.load_js_btn_id);
         mLoadJSBtn.setOnClickListener(this);
+        mJsCallAndroidBtn = (Button)findViewById(R.id.js_call_android_id);
+        mJsCallAndroidBtn.setOnClickListener(this);
         mWebViewLayout = (RelativeLayout)findViewById(R.id.webview_layout_id);
         mWebView = new WebView(getApplicationContext());
         mWebViewLayout.addView(mWebView, new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
@@ -157,6 +161,9 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
             case R.id.load_js_btn_id:
                 androidCallJSFunc();
                 break;
+            case R.id.js_call_android_id:
+                jsCallAndroid();
+                break;
         }
     }
 
@@ -171,5 +178,12 @@ public class WebViewActivity extends AppCompatActivity implements View.OnClickLi
                 }
             });
         }
+    }
+
+    private void jsCallAndroid() {
+        //通过addJavascriptInterface将java对象映射到js对象
+        //参数1：Javascript对象名;参数2：Java对象名
+        mWebView.addJavascriptInterface(new AndroidtoJs(), "test");
+        mWebView.loadUrl("file:///android_asset/jscallandroid.html");
     }
 }

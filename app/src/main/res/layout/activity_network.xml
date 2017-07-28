@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.zhangqingling.helloworld.activity.NetworkActivity"
+    android:orientation="vertical">
+    <EditText
+        android:id="@+id/edit_text_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="http://soft.pajk-ent.com/scm/personaldoc/test/personaldoc_test_V_5.2.0_549_false.apk"/>
+
+    <Button
+        android:id="@+id/download_btn_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DownloadManager Demo"/>
+
+    <Button
+        android:id="@+id/install_apk_btn_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="install apk"/>
+
+    <Button
+        android:id="@+id/webview_btn_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="WebView Demo"/>
+
+</LinearLayout>

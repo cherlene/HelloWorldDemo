@@ -15,7 +15,15 @@ out/
 
 # Gradle files
 .gradle/
+gradlew*
 build/
+
+#Eclipse
+.project
+.classpath
+.settings
+gradle-wrapper.properties
+lint.xml
 
 # Local configuration file (sdk path, etc)
 local.properties
@@ -34,11 +42,8 @@ captures/
 
 # Intellij
 *.iml
-.idea/workspace.xml
-.idea/tasks.xml
-.idea/gradle.xml
-.idea/dictionaries
-.idea/libraries
+.idea
+*.ipl
 
 # Keystore files
 *.jks
@@ -53,3 +58,10 @@ google-services.json
 freeline.py
 freeline/
 freeline_project_description.json
+
+#Maven
+target
+release.properties
+pom.xml.*
+
+gradle/wrapper/gradle-wrapper.properties
